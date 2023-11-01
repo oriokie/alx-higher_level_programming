@@ -1,3 +1,6 @@
 #!/bin/bash
-python3 $PYFILE
-cp $PYFILE ${PUFILE}c
+PYCFILE="${PYFILE}c"
+python3 -m compileall "$PYFILE"
+COMPILED_FILE=$(find "__pycache__" -name "*.pyc")
+mv "$COMPILED_FILE" "$PYCFILE"
+rm -r "__pycache__"
