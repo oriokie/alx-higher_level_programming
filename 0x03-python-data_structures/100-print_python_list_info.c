@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <Python.h>
 /**
  * print_python_list_info - function that prints a Python list info
@@ -15,13 +14,6 @@ void print_python_list_info(PyObject *p)
 
 	size = Py_SIZE(p);
 	printf("[*] Size of the Python List = %ld\n", size);
-
-	/* checking if the 'p' is a valid python list */
-	if (!PyList_Check(p))
-	{
-		printf("  [ERROR] Invalid list object\n");
-		return;
-	}
 
 	/* converts the generic PyObject to a PyListObject */
 	list = (PyListObject *)p;
