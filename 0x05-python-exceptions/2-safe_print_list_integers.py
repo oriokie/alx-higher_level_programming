@@ -3,7 +3,7 @@ def safe_print_list_integers(my_list=[], x=0):
     counter = 0
     try:
         for number in range(x):
-            print("{:d}".format(my_list[number]), end='')
+            print('{:d}'.format(my_list[number]), end='')
             counter += 1
     except (ValueError, TypeError):
         pass
