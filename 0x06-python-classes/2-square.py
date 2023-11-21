@@ -18,7 +18,7 @@ class Square:
             __size (int): the dimension of the square
 
         """
-        self.__size = size
+        self.__set_size(size)
 
     def __set_size(self, size):
         """
