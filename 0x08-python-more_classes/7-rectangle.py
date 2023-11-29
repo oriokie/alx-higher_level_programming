@@ -92,7 +92,7 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         character = str(self.print_symbol)
-        return ((character *self.__width + "\n")*self.__height)[:-1]
+        return ((character*self.__width + "\n")*self.__height)[:-1]
 
     def __repr__(self):
         """Returns the string representation of the rectangle"""
