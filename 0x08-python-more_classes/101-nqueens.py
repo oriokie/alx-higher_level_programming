@@ -3,21 +3,55 @@
 """
 N Queens puzzle module
 """
-
 import sys
 
-def main(argv):
-    if len(argv) is not 1:
-        print("Usage: nqueens N")
-        sys.exit(1)
-    N = int(argv[0])
-    if type(N) is not int:
+
+class NQueensSolver:
+    def __init__(self, n):
+        self.n = n
+        self.board = [-1] * n
+
+    def is_safe(self, row, col):
+        for i in range(row):
+            if self.board[i] == col or \
+               self.board[i] - i == col - row or \
+               self.board[i] + i == col + row:
+                return False
+        return True
+
+    def solve_nqueens(self, row):
+        if row == self.n:
+            self.print_solution()
+            return
+
+        for col in range(self.n):
+            if self.is_safe(row, col):
+                self.board[row] = col
+                self.solve_nqueens(row + 1)
+
+    def print_solution(self):
+        result = [[i, self.board[i]] for i in range(self.n)]
+        print(result)
+
+
+def nqueens_main(n):
+    if not n.isdigit():
         print("N must be a number")
         sys.exit(1)
-    if N < 4:
+
+    n = int(n)
+
+    if n < 4:
         print("N must be at least 4")
         sys.exit(1)
-    print(int(argv[0]))
+
+    solver = NQueensSolver(n)
+    solver.solve_nqueens(0)
+
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    if len(sys.argv) != 2:
+        print("Usage: nqueens N")
+        sys.exit(1)
+
+    nqueens_main(sys.argv[1])
