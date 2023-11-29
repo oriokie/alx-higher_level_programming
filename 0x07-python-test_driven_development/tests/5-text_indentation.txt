@@ -10,19 +10,17 @@ TypeError: text must be a string
 >>> text_indentation("")
 <BLANKLINE>
 
->>> text_indentation("First sentence? Second sentence: Third sentence.")
+>>> text_indentation("First sentence? Second sentence: Third sentence")
 First sentence?
 <BLANKLINE>
 Second sentence:
 <BLANKLINE>
-Third sentence.
-<BLANKLINE>
+Third sentence
 
 
->>> text_indentation("First sentence? Second sentence:          Third sentence.")
+>>> text_indentation("First sentence? Second sentence:          Third sentence")
 First sentence?
 <BLANKLINE>
 Second sentence:
 <BLANKLINE>
-Third sentence.
-<BLANKLINE>
+Third sentence

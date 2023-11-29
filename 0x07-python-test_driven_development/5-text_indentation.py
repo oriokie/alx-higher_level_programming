@@ -23,7 +23,17 @@ def text_indentation(text):
     """
     if type(text) is not str:
         raise TypeError("text must be a string")
-    for char in ".?:":
-        text = text.replace(char, char + "\n\n")
-    lines = [line.strip() for line in text.splitlines()]
-    print("\n".join(lines))
+    lines = []
+    current_line = ""
+    for char in text:
+        if char in ['.', '?', ':']:
+            current_line += char
+            lines.append(current_line.strip())
+            lines.append("")
+            current_line = ""
+        else:
+            current_line += char
+    lines.append(current_line.strip())
+
+    for line in lines:
+        print(line)
