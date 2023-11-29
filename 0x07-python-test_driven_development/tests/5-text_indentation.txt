@@ -24,3 +24,20 @@ First sentence?
 Second sentence:
 <BLANKLINE>
 Third sentence
+
+>>> text_indentation("Holberton School")
+Holberton School
+
+>>> text_indentation("Holberton.School")
+Holberton.
+<BLANKLINE>
+School
+
+>>> text_indentation("Holberton. School? How are you: John")
+Holberton.
+<BLANKLINE>
+School?
+<BLANKLINE>
+How are you:
+<BLANKLINE>
+John
