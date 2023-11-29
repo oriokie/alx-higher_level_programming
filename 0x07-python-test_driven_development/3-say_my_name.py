@@ -35,4 +35,4 @@ def say_my_name(first_name, last_name=""):
         fullname += first_name + " "
     if last_name:
         fullname += last_name
-    print("My name is {:s}".format(fullname.strip()))
+    print("My name is {:s}".format(fullname))

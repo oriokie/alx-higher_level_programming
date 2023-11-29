@@ -74,6 +74,7 @@ Missing one argument
 >>> matrix_divided([2, 3])
 TypeError: matrix_divided() missing 1 required positional argument: 'div'
 
+
 list of lists of integers with one float(inf/nan) / div= integer
 >>> matrix_divided([[1, 2, 3], [4, 5, 6]], float('inf'))
 [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
