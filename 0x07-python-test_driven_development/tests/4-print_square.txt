@@ -1,0 +1,56 @@
+This is a doctest for the function print_square.
+========================================================
+>>> print_square = __import__('4-print_square').print_square
+
+>>> print_square(4)
+####
+####
+####
+####
+
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+
+Testing if size is an integer
+
+>>> print_square(4.5)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square(-4.5)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square("2")
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square([2, 1])
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+Testing if size is greater than 0
+
+>>> print_square(-1)
+Traceback (most recent call last):
+ValueError: size must be >= 0
+
+It should print an empty line if size equal 0
+
+>>> print_square(0)
+<BLANKLINE>
+
+It should print a single symbol when passing 1
+
+>>> print_square(1)
+#

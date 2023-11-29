@@ -1,0 +1,28 @@
+This is a doctest for the function print_square.
+========================================================
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+
+>>> text_indentation(984355)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation("")
+<BLANKLINE>
+
+>>> text_indentation("First sentence? Second sentence: Third sentence.")
+First sentence?
+<BLANKLINE>
+Second sentence:
+<BLANKLINE>
+Third sentence.
+<BLANKLINE>
+
+
+>>> text_indentation("First sentence? Second sentence:          Third sentence.")
+First sentence?
+<BLANKLINE>
+Second sentence:
+<BLANKLINE>
+Third sentence.
+<BLANKLINE>
