@@ -26,5 +26,18 @@ class TestMax(unittest.TestCase):
         with self.assertRaises(TypeError):
             max_integer(my_list)
 
+    def test_one(self):
+        my_list = [4]
+        self.assertEqual(max_integer(my_list), 4)
+
+    def test_beg(self):
+        my_list = [4, 3, 2, 1]
+        self.assertEqual(max_integer(my_list), 4)
+
+    def test_neg(self):
+        my_list = [-4, 3, 2, 1]
+        self.assertEqual(max_integer(my_list), 3)
+    
+
 if __name__ == "__main__":
     unittest.main()
