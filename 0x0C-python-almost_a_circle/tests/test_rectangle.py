@@ -302,5 +302,50 @@ class TestDisplay(unittest.TestCase):
         self.assertEqual(rect.__str__(), "[Rectangle] (1) 0/0 - 5/10")
 
 
+class TestUpdate(unittest.TestCase):
+    """
+    Testing update
+    """
+    def test_update(self):
+        """
+        Testing update
+        """
+        rect = Rectangle(10, 10, 10, 10)
+        rect.update(89)
+        self.assertEqual("[Rectangle] (89) 10/10 - 10/10", str(rect))
+
+        rect.update(89, 2)
+        self.assertEqual("[Rectangle] (89) 10/10 - 2/10", str(rect))
+
+        rect.update(89, 2, 3)
+        self.assertEqual("[Rectangle] (89) 10/10 - 2/3", str(rect))
+
+        rect.update(89, 2, 3, 4)
+        self.assertEqual("[Rectangle] (89) 4/10 - 2/3", str(rect))
+
+        rect.update(x=12)
+        self.assertEqual("[Rectangle] (89) 12/10 - 2/3", str(rect))
+
+        rect.update(size=7, y=1)
+        self.assertEqual("[Rectangle] (89) 12/1 - 2/3", str(rect))
+
+
+class TestDict(unittest.TestCase):
+    """
+    Testing dictionary
+    """
+    def test_dictionary(self):
+        """
+        Testing dictionary
+        """
+        rect = Rectangle(10, 10, 10, 10, 1)
+        rect_dict = rect.to_dictionary()
+        self.assertEqual(rect_dict["id"], 1)
+        self.assertEqual(rect_dict["width"], 10)
+        self.assertEqual(rect_dict["height"], 10)
+        self.assertEqual(rect_dict["x"], 10)
+        self.assertEqual(rect_dict["y"], 10)
+
+
 if __name__ == "__main__":
     unittest.main()
