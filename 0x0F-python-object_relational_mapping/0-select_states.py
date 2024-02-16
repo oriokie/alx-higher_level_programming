@@ -3,21 +3,22 @@
 import MySQLdb
 from sys import argv
 
+
 def main():
     '''Creating connection to the db '''
     db = MySQLdb.connect(host='localhost',
                          port=3306,
                          user=argv[1],
                          passwd = argv[2],
-                         database = argv[3])
+                         db = argv[3])
     ''' Creating a cursor '''
     cur = db.cursor()
 
     ''' Executing the query to list all the states '''
-    cur.execute('SELECT * FROM states ORDERY BY id ASC')
+    cur.execute('SELECT * FROM states ORDER BY ID')
     rows = cur.fetchall()
     for row in rows:
-        print(i)
+        print(row)
 
     ''' close all cursor and database '''
     cur.close()
