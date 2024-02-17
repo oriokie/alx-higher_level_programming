@@ -9,8 +9,8 @@ def main():
     db = MySQLdb.connect(host='localhost',
                          port=3306,
                          user=argv[1],
-                         passwd = argv[2],
-                         db = argv[3])
+                         passwd=argv[2],
+                         db=argv[3])
     ''' Creating a cursor '''
     cur = db.cursor()
 
@@ -23,6 +23,7 @@ def main():
     ''' close all cursor and database '''
     cur.close()
     db.close()
+
 
 if __name__ == "__main__":
     main()
