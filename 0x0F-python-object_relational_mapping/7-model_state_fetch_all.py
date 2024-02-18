@@ -12,7 +12,7 @@ def fetch_all_states():
     """Function for fetching all the states"""
     username = argv[1]
     password = argv[2]
-    db = argv [3]
+    db = argv[3]
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
         username, password, db), pool_pre_ping=True)
@@ -29,6 +29,7 @@ def fetch_all_states():
         print("{}: {}".format(state.id, state.name))
 
     session.close()
+
 
 if __name__ == "__main__":
     fetch_all_states()
