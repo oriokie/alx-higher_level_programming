@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+This module prints the first state object from the database
+"""
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
