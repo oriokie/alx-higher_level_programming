@@ -26,8 +26,9 @@ def main():
     """query first state"""
     a_state = session.query(State).filter(
             State.name.like('%a%')).order_by(State.id)
-    for state in a_state.all():
-        print('{}.{}'.format(state.id, state.name))
+    if a_state:
+        for state in a_state.all():
+            print('{}.{}'.format(state.id, state.name))
     session.close()
 
 
