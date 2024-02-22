@@ -6,6 +6,7 @@ from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sys import argv
+from model_city import City
 
 
 def main():
@@ -25,7 +26,7 @@ def main():
 
     cities_in_states = session.query(City, State).filter(
             City.state_id == State.id
-            ).order_by(City_id).all()
+            ).order_by(City.id).all()
     for city, state in cities_in_states:
         print('{}: ({}) {}'.format(state.name, city.id, city.name))
 
