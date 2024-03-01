@@ -10,7 +10,7 @@ def main():
         print('Body response:')
         print('\t - type: {}'.format(type(html_file)))
         print('\t - content: {}'.format(html_file))
-        print('\t - utf8 content: {}'.format(html_file.decode('utf-8')))
+        print('\t - utf8 content: {}'.format(html_file.decode('utf8')))
 
 
 if __name__ == '__main__':
