@@ -1,20 +1,24 @@
 #!/usr/bin/node
 
 const request = require('request');
-const apiUrl = process.argv[2];
+const url = process.argv[2];
 
-request(apiUrl, function (err, response, body) {
+request(url, function (err, response, body) {
   if (err) {
-    console.error(err);
+    console.log(err);
   } else if (response.statusCode === 200) {
     const films = JSON.parse(body).results;
-    const characterId = '18';
     let count = 0;
-    for (const film of films) {
-      if (film.characters.some(characterUrl => characterUrl.includes(`/${characterId}/`))) {
-        count++;
+    for (const filmIndex in films) {
+      const filmChars = films[filmIndex].characters;
+      for (const charIndex in filmChars) {
+        if (filmChars[charIndex].includes('18')) {
+          count++;
+        }
       }
     }
     console.log(count);
+  } else {
+    console.log('An error occured. Status code: ' + response.statusCode);
   }
 });
